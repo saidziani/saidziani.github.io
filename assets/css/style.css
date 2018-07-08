@@ -44,6 +44,9 @@ body{
 h1{font-size: 45px}
 h5{font-size: 22px;text-transform: initial;padding: 3px 0px}
 
+a{text-decoration: none !important; color: #0a293b; transition: 0.3s}
+a:hover{ color: rgba(255, 51, 51, 0.8); transition: 0.3s}
+
 /*****************/
 /* Header */
 #header{
