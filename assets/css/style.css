@@ -47,6 +47,20 @@ h5{font-size: 22px;text-transform: initial;padding: 3px 0px}
 a{text-decoration: none !important; color: #0a293b; transition: 0.3s}
 a:hover{ color: rgba(255, 51, 51, 0.8); transition: 0.3s}
 
+ul li{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.main{
+    opacity: 1;
+}
+
+.secondary{
+    opacity: .8;
+}
+
 /*****************/
 /* Header */
 #header{
@@ -143,12 +157,11 @@ a:hover{ color: rgba(255, 51, 51, 0.8); transition: 0.3s}
 #content .technologies{
     font-weight: 600;
     font-size: 15px;
-    /*font-family: 'Space Mono';*/
     word-spacing: 5px;
 }
 
 #content .info{
-    color: #fc4236
+    color: #fc4236;
 }
 
 #content .lang{
