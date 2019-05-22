@@ -49,7 +49,7 @@ a:hover{ color: #fc4236 ; transition: 0.3s; }
 
 ul li{
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -67,7 +67,7 @@ ul li{
     height: 100%
 }
 #home img{
-    width: 350px
+    width: 100%
 }
 #home h1{
     font-size: 40px;
@@ -144,6 +144,21 @@ ul li{
 
 #content .activity p{
     margin-bottom: 0px
+}
+
+#content .activity .tasks{
+    padding-left: 20px;
+}
+
+#content .activity .tasks li{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+}
+
+#content .activity .tasks span{
+    font-size: 20px;
+    font-weight: 900;
 }
 
 #content .column{
