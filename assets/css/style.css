@@ -44,8 +44,8 @@ body{
 h1{font-size: 45px}
 h5{font-size: 22px;text-transform: initial;padding: 3px 0px}
 
-a{text-decoration: none !important; color: #0a293b; transition: 0.3s}
-a:hover{ color: #7F3F00 ; transition: 0.3s}
+a{text-decoration: none !important; color: #0a293b; transition: 0.3s;}
+a:hover{ color: #fc4236 ; transition: 0.3s; }
 
 ul li{
     display: inline-block;
