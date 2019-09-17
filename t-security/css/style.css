@@ -1,0 +1,265 @@
+/*~~~~~ Wojooh_front Website Style ~~~~~*/
+:root {
+    --sombre: #212529;
+    --clair: #F8F8F8;
+    --green: #19d6a7;
+}
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #000; 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--graySecond); 
+}
+
+@font-face {
+    font-family: 'boing';
+    src: url(../fonts/Boing-Regular.otf);
+}
+@font-face {
+    font-family: 'boing-bold';
+    src: url(../fonts/Boing-Bold.otf);
+
+}
+
+html{
+    height: 100%; 
+    sans-serif;
+}
+body{
+    height: 100%;
+    font-family: 'boing';
+    background-color: #fff;
+    color: var(--sombre);
+}
+.container{
+    width: 90% !important
+}
+.hideme{
+  display: none;
+}
+.align-center {text-align:center}
+.align-left {text-align:left}
+.align-right {text-align:right}
+
+.position-center-center {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.saut{
+  margin-top: 25px
+}
+button{
+  margin-top: 45px;
+  font-size: 15px;
+  border-radius: 25px !important;
+  color: var(--sombre) !important;
+  background-color: var(--jaune) !important;
+  padding: 0px 25px;
+  font-weight: 500;
+}
+
+/* Navbar */
+.nav-wrapper{
+  background: #000;
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 50%;
+  margin-left: 25%
+}
+#desktop-nav{
+  padding-right: 20px
+}
+nav{
+  background: #000;
+}
+nav a{
+  text-transform: uppercase;
+  font-size: 20px
+}
+#nav_logo{
+  margin-top: 15px;
+  width: 115px;
+  padding-left: 20px;
+}
+#sticky{
+  display: none;
+}
+.nav-losonge{
+  width: 8px
+}
+
+/*~~ Home ~~*/
+#home{
+  background: url('../img/backgrounds/bg.png') no-repeat center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  height: 100%;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+#home nav .sidenav-trigger{
+  left: -20%;
+}
+#home #logo-ar{
+  width: 30%;
+  margin-right: 10px
+}
+#home #logo-en{
+  width: 40%
+}
+
+#home #arrow{
+  position: absolute; 
+  top: 90%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+#home #arrow #the-phrase{
+  font-size: 22px;
+  font-family: 'boing-bold';
+  color: var(--clair);
+  margin-bottom: 5px
+}
+#home #arrow #call-us{
+  font-size: 14px;
+  color: var(--clair)
+}
+
+#home #arrow #call-us span{
+  font-size: 13px;
+  font-family: 'boing-bold';
+  color: var(--sombre);
+  border: 1px ;
+  padding: 8px 13px 5px 13px;
+  border-radius: 15px;
+  background-color: var(--green);
+  margin-left: 10px;
+}
+
+
+/*~~ Desc ~~*/
+#desc{
+  height: auto;
+  padding-top: 8vh;
+  text-align: center;
+}
+#desc .valign-wrapper{
+  height: 100%
+}
+#desc h2{
+  font-size: 35px;
+  padding-bottom: 50px
+}
+#desc #desc-text .service div{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 90%;
+  border-radius: 15px
+}
+#desc #desc-text .service p{
+  font-size: 17px;
+  color: var(--sombre);
+  margin-bottom: 5px;
+  line-height: 20px
+}
+#desc #desc-text .service hr{
+  width: 60px;
+  height: 2px;
+  border: 0; 
+  border-top: 2px solid var(--green);
+  margin-top: 0px;
+}
+
+
+/*~~ Services ~~*/
+#services{
+  background-color: #fff;
+  background-size: cover;
+  height: auto;
+  margin: 10vh 0 
+}
+#services .valign-wrapper{
+  height: 100%;
+}
+#services .client{
+  width: 14.285714285714285714285714285714%
+}
+#services .client img{
+  width: 80% 
+}
+#services .client #client-1{
+  width: 65% 
+}
+#services .client #client-2{
+  width: 60% 
+}
+#services .client #client-3{
+  width: 80% 
+}
+#services .client #client-4{
+  width: 80% 
+}
+#services .client #client-5{
+  width: 90% 
+}
+#services .client #client-6{
+  width: 70% 
+}
+#services .client #client-7{
+  width: 80% 
+}
+#services h2{
+  text-align: center;
+  font-size: 35px;
+  padding: 45px 0
+}
+
+/*~~ Info ~~*/
+#footer{
+  padding: 50px 0px;
+  padding-bottom: 20px
+}
+#footer #logo-losonge{
+  width: 150px
+}
+#footer h2{
+  font-size: 35px;
+  padding: 10px 0 30px 0
+}
+#footer p{
+  font-family: 'boing-bold';
+  margin: 2px;
+  font-size: 16px;
+}
+#footer a{
+  color: #fff
+}
+
+/*FOOTER*/
+footer{
+  background: var(--sombre) no-repeat center center;
+  padding: 10px;
+  text-align: center;
+  color: var(--clair);
+  font-size: 12px
+}
+footer a{
+  color: var(--clair)
+}
+footer img{
+  width: 10px
+}
+
