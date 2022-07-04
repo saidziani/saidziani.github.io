@@ -3,9 +3,11 @@
 /*~~ FONTS ~~*/
 
 /*~~ GLOBAL ~~*/
-html{height: 100%;}
+html {
+    height: 100%;
+}
 
-body{
+body {
     height: 100%;
     font-family: 'Cairo';
     background-color: #f5f5f5;
@@ -15,20 +17,22 @@ body{
     text-align: center;
 }
 
-.container{
+.container {
     width: 95%;
     display: flex;
     align-items: center;
 }
 
 .align-left {
-    text-align:left ;
+    text-align: left;
 }
+
 .align-right {
-    text-align:right ;
+    text-align: right;
 }
+
 .align-center {
-    text-align:center ;
+    text-align: center;
 }
 
 .position-center-center {
@@ -41,205 +45,231 @@ body{
     transform: translate(-50%, -50%);
 }
 
-h1{font-size: 45px}
-h5{font-size: 22px;text-transform: initial;padding: 3px 0px}
+h1 {
+    font-size: 45px
+}
 
-a{text-decoration: none !important; color: #0a293b; transition: 0.3s;}
-a:hover{ color: #708090 ; transition: 0.3s; }
+h5 {
+    font-size: 22px;
+    text-transform: initial;
+    padding: 3px 0px
+}
 
-ul li{
+a {
+    text-decoration: none !important;
+    color: #0a293b;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #708090;
+    transition: 0.3s;
+}
+
+ul li {
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
 }
 
-.main{
+.main {
     opacity: 1;
 }
 
-.secondary{
+.secondary {
     opacity: .8;
 }
 
 /*****************/
 /* Home */
-#home{
+#home {
     height: 100%
 }
-#home img{
+
+#home img {
     width: 100%
 }
-#home h1{
+
+#home h1 {
     font-size: 40px;
     font-weight: 700;
     margin: 10px 0px 0px 0px
 }
-#home h2{
+
+#home h2 {
     font-size: 22px;
     font-weight: 500;
     margin: 0px
 }
-#home ul{
+
+#home ul {
     padding: 0px
 }
-#home ul li{
+
+#home ul li {
     padding: 20px 10px;
     font-size: 15px
 }
+
 /* Header */
-#header{
-    border-bottom: 2px rgba(112,128,144,.7) solid;
+#header {
+    border-bottom: 2px rgba(112, 128, 144, .7) solid;
     background-image: url('../img/background.png');
     background-size: cover;
 }
 
-#header #desc{
+#header #desc {
     font-size: 16px;
-    font-weight: 500 
+    font-weight: 500
 }
 
-#header .info{
+#header .info {
     padding: 15px 0px;
 }
 
-#header #picture{
+#header #picture {
     border-radius: 50%;
-    border: 2px #000 solid; 
+    border: 2px #000 solid;
 }
 
-#header .in-pic{
+#header .in-pic {
     width: 25px;
     margin-left: 20px
 }
 
-#header #dl img{
+#header #dl img {
     margin-left: 0px !important;
     opacity: 0.7
 }
 
 #header #dl {
-    color: rgba(112,128,144, .7);
+    color: rgba(112, 128, 144, .7);
 }
 
-#header #dl h5{
+#header #dl h5 {
     font-size: 17px
 }
 
-#header #dl:hover{
-    color: rgba(112,128,144, 1);
+#header #dl:hover {
+    color: rgba(112, 128, 144, 1);
 }
 
-#header #dl:hover img{
+#header #dl:hover img {
     opacity: 1
 }
+
 /***************/
 /* Content */
-#content .activity-type{
+#content .activity-type {
     padding-bottom: 20px
 }
 
-#content .activity{
+#content .activity {
     padding-bottom: 5px
 }
 
-#content .activity p{
+#content .activity p {
     margin-bottom: 0px
 }
 
-#content .activity .tasks{
+#content .activity .tasks {
     padding-left: 20px;
 }
 
-#content .activity .tasks li{
+#content .activity .tasks li {
     font-size: 14px;
     font-weight: 100;
     line-height: 20px;
     display: block;
 }
 
-#content .activity .tasks span{
+#content .activity .tasks span {
     font-size: 20px;
     font-weight: 900;
 }
 
-#content .column{
+#content .column {
     margin-right: 100px;
     padding: 0px
 }
 
-#content .column-small{
+#content .column-small {
     padding: 0px;
 }
 
-#content .type{
+#content .type {
     font-size: 30px;
     font-weight: 600;
     padding-bottom: 15px
 }
 
-#content .title{
+#content .title {
     font-size: 25px;
     margin-bottom: 0px;
 }
 
-#content .institution{
+#content .institution {
     font-size: 20px;
     margin-top: 0px;
     font-weight: 400
 }
 
-#content .keywords{
+#content .keywords {
     font-weight: 500;
     font-size: 13px;
     font-family: 'Cairo'
 }
 
-#content .technologies{
+#content .technologies {
     font-weight: 600;
     font-size: 15px;
     word-spacing: 5px;
 }
 
-#content .info{
+#content .info {
     color: #708090;
 }
 
-#content .lang{
+#content .lang {
     font-weight: 600
 }
 
-#content .lang-row{
+#content .lang-row {
     margin-right: 20px
 }
 
-#content .skill-bar{
+#content .skill-bar {
     margin-bottom: 20px;
     width: 90% !important;
 }
 
-#content .skill-type{
+#content .skill-type {
     margin-bottom: 5px;
     font-weight: 400;
     font-size: 15px
 }
 
-#content .sb_label{
+#content .sb_label {
     font-size: 15px !important;
-}    
+}
 
-#content #levels{
+#content #levels {
     height: 20px;
     width: 90%;
     margin-bottom: 10px
 }
 
-#content .level{
-    width: 25%; 
+#content .level {
+    width: 25%;
     border-right: 1px solid;
     border-left: 1px solid;
     text-align: center;
 }
 
-#content .pipe{
+#content .pipe {
     font-size: 12px
+}
+
+#extra .institution {
+    margin-bottom: 0px
 }
