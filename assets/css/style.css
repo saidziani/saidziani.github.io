@@ -178,6 +178,7 @@ ul li {
 
 #content .activity .tasks {
     padding-left: 20px;
+    margin-bottom: 0px;
 }
 
 #content .activity .tasks li {
