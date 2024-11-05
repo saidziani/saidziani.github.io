@@ -130,6 +130,7 @@ ul li {
 #header #picture {
     border-radius: 50%;
     border: 2px #000 solid;
+    width: 250px;
 }
 
 #header .in-pic {
