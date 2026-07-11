@@ -362,11 +362,11 @@
       </div>
       <div class="form-field">
         <label>Weight (kg)</label>
-        <input type="number" id="jWeight" inputmode="decimal" placeholder="82.5" step="0.1">
+        <input type="text" id="jWeight" inputmode="decimal" placeholder="82.5">
       </div>
       <div class="form-field">
         <label>Waist (cm)</label>
-        <input type="number" id="jWaist" inputmode="decimal" placeholder="90.0" step="0.1">
+        <input type="text" id="jWaist" inputmode="decimal" placeholder="90.0">
       </div>
       <button class="btn-log" onclick="logEntry()">LOG</button>
     </div>
@@ -445,7 +445,7 @@
           <span class="ex-name">Bench Press</span>
           <span class="ex-sets">4 × 5</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="bench_press" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="bench_press" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -455,7 +455,7 @@
           <span class="ex-name">Incline Dumbbell Press</span>
           <span class="ex-sets">3 × 8–10</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="incline_db_press" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="incline_db_press" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -465,7 +465,7 @@
           <span class="ex-name">Seated DB Overhead Press</span>
           <span class="ex-sets">3 × 10–12</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="seated_db_shoulder" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="seated_db_shoulder" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -475,7 +475,7 @@
           <span class="ex-name">Lateral Raises</span>
           <span class="ex-sets">4 × 12–15</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="lateral_raise" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="lateral_raise" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -485,7 +485,7 @@
           <span class="ex-name">Cable Triceps Pushdown</span>
           <span class="ex-sets">3 × 12–15</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="tricep_pushdown" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="tricep_pushdown" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -495,7 +495,7 @@
           <span class="ex-name">Overhead Triceps Extension</span>
           <span class="ex-sets">3 × 10–12</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="overhead_tricep" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="overhead_tricep" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -515,7 +515,7 @@
           <span class="ex-name">Lat Pulldown</span>
           <span class="ex-sets">4 × 8–10</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="lat_pulldown" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="lat_pulldown" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -525,7 +525,7 @@
           <span class="ex-name">Barbell Row</span>
           <span class="ex-sets">4 × 6–8</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="barbell_row" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="barbell_row" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -535,7 +535,7 @@
           <span class="ex-name">Seated Cable Row</span>
           <span class="ex-sets">3 × 10–12</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="seated_cable_row" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="seated_cable_row" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -545,7 +545,7 @@
           <span class="ex-name">Rear Delt Cable Fly</span>
           <span class="ex-sets">3 × 12–15</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="rear_delt_cable" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="rear_delt_cable" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -555,7 +555,7 @@
           <span class="ex-name">Dumbbell Bicep Curls</span>
           <span class="ex-sets">3 × 10–12</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="db_bicep_curl" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="db_bicep_curl" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -565,7 +565,7 @@
           <span class="ex-name">EZ-Bar Curl</span>
           <span class="ex-sets">3 × 10–12</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="ez_bar_curl" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="ez_bar_curl" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -585,7 +585,7 @@
           <span class="ex-name">Back Squat / Leg Press</span>
           <span class="ex-sets">4 × 6–8</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="back_squat" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="back_squat" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -595,7 +595,7 @@
           <span class="ex-name">Deadlift</span>
           <span class="ex-sets">3 × 5</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="deadlift" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="deadlift" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -605,7 +605,7 @@
           <span class="ex-name">Leg Extension</span>
           <span class="ex-sets">3 × 12–15</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="leg_extensions" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="leg_extensions" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -615,7 +615,7 @@
           <span class="ex-name">Leg Curl</span>
           <span class="ex-sets">3 × 12–15</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="leg_curl" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="leg_curl" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -625,7 +625,7 @@
           <span class="ex-name">Hanging Ab Crunches</span>
           <span class="ex-sets">3 × 15–20</span>
           <div class="ex-weight-wrap" onclick="event.stopPropagation()">
-            <input class="ex-weight" type="number" inputmode="decimal" placeholder="—" data-key="hanging_leg_raise" onchange="saveWeight(this)" onfocus="this.select()">
+            <input class="ex-weight" type="text" inputmode="decimal" placeholder="—" data-key="hanging_leg_raise" onchange="saveWeight(this)" onfocus="this.select()">
             <span class="ex-unit">kg</span>
           </div>
           <span class="ex-eye"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.2"><path d="M1 6s2-4 5-4 5 4 5 4-2 4-5 4-5-4-5-4z"/><circle cx="6" cy="6" r="1.5"/></svg></span>
@@ -720,10 +720,15 @@ function avg(arr, key) {
   return vals.reduce((a, b) => a + b, 0) / vals.length;
 }
 
+function parseDecimal(str) {
+  // Accept both "82,5" and "82.5"
+  return parseFloat(String(str).trim().replace(",", "."));
+}
+
 function logEntry() {
   const dateVal = document.getElementById("jDate").value;
-  const weightVal = parseFloat(document.getElementById("jWeight").value);
-  const waistVal  = parseFloat(document.getElementById("jWaist").value);
+  const weightVal = parseDecimal(document.getElementById("jWeight").value);
+  const waistVal  = parseDecimal(document.getElementById("jWaist").value);
 
   if (!dateVal) { alert("Please pick a date."); return; }
   if (isNaN(weightVal) && isNaN(waistVal)) { alert("Enter at least weight or waist."); return; }
@@ -997,9 +1002,9 @@ function saveWeight(input) {
     input.classList.remove("has-value");
   } else {
     const prev = weights[key];
-    weights[key] = parseFloat(val);
+    weights[key] = parseDecimal(val);
     input.classList.add("has-value");
-    if (prev && parseFloat(val) > prev) showPR(input, val, prev);
+    if (prev && parseDecimal(val) > prev) showPR(input, val, prev);
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(weights));
 }
