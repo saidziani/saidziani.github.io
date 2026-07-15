@@ -303,7 +303,7 @@
   .chart-legend { display: flex; gap: 14px; }
   .chart-legend-item { display: flex; align-items: center; gap: 5px; font-size: 9px; letter-spacing: 1px; }
   .chart-legend-dot { width: 20px; height: 2px; display: inline-block; }
-  canvas#journeyChart { width: 100% !important; height: 200px !important; display: block; }
+  canvas#journeyChart, canvas#dailyChart { width: 100% !important; height: 200px !important; display: block; }
   .week-table-wrap { background: var(--card); border: 1px solid var(--border); border-top: none; overflow-x: auto; }
   .week-table { width: 100%; border-collapse: collapse; font-family: "DM Mono", monospace; font-size: 11px; min-width: 340px; }
   .week-table th { padding: 10px 16px; text-align: left; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; font-size: 9px; border-bottom: 1px solid var(--border); font-weight: 400; }
@@ -358,7 +358,7 @@
     <div class="journey-form">
       <div class="form-field">
         <label>Date</label>
-        <input type="date" id="jDate">
+        <input type="date" id="jDate" onchange="fillDateInputs()">
       </div>
       <div class="form-field">
         <label>Weight (kg)</label>
@@ -393,6 +393,19 @@
         <div><span class="stat-value" id="statTotalWaist">—</span><span class="stat-unit">cm</span></div>
         <span class="stat-delta neutral" id="statTotalWaistSub">vs first entry</span>
       </div>
+    </div>
+
+    <!-- Daily chart -->
+    <div class="journey-chart-wrap">
+      <div class="chart-title">
+        <span>Daily entries</span>
+        <div class="chart-legend">
+          <div class="chart-legend-item"><span class="chart-legend-dot" style="background:#ff6b35"></span>Weight kg</div>
+          <div class="chart-legend-item"><span class="chart-legend-dot" style="background:#47c2ff"></span>Waist cm</div>
+        </div>
+      </div>
+      <canvas id="dailyChart" style="height:240px"></canvas>
+      <div class="no-data-msg" id="dailyChartNoData">No entries yet — log your first weigh-in above</div>
     </div>
 
     <!-- Chart -->
@@ -748,11 +761,28 @@ function logEntry() {
   entries.sort((a, b) => a.date.localeCompare(b.date));
   journeySave(entries);
 
-  // Reset fields
-  document.getElementById("jWeight").value = "";
-  document.getElementById("jWaist").value  = "";
-
+  fillDateInputs();
   journeyRender();
+}
+
+// Fill the weight/waist inputs with the selected day's entry, or the most
+// recent prior day's value if nothing was logged for that day yet.
+function fillDateInputs() {
+  const dateVal = document.getElementById("jDate").value;
+  const jWeight = document.getElementById("jWeight");
+  const jWaist  = document.getElementById("jWaist");
+
+  if (!dateVal) { jWeight.value = ""; jWaist.value = ""; return; }
+
+  const priorEntries = journeyLoad()
+    .filter(e => e.date <= dateVal)
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const weightEntry = priorEntries.find(e => e.weight != null);
+  const waistEntry  = priorEntries.find(e => e.waist  != null);
+
+  jWeight.value = weightEntry ? weightEntry.weight : "";
+  jWaist.value  = waistEntry  ? waistEntry.waist  : "";
 }
 
 function journeyRender() {
@@ -820,6 +850,19 @@ function journeyRender() {
     noData.style.display = "none";
     canvas.style.display = "block";
     drawChart(weeks);
+  }
+
+  // ── Daily chart ──
+  const dailyNoData = document.getElementById("dailyChartNoData");
+  const dailyCanvas = document.getElementById("dailyChart");
+
+  if (entries.length === 0) {
+    dailyNoData.style.display = "block";
+    dailyCanvas.style.display = "none";
+  } else {
+    dailyNoData.style.display = "none";
+    dailyCanvas.style.display = "block";
+    drawDailyChart(entries);
   }
 
   // ── Table ──
@@ -984,6 +1027,132 @@ function drawChart(weeks) {
   }
 }
 
+let dailyChartInst = null;
+
+function drawDailyChart(entries) {
+  const noData = document.getElementById("dailyChartNoData");
+  const canvas = document.getElementById("dailyChart");
+
+  if (!entries.length) {
+    noData.style.display = "block";
+    canvas.style.display = "none";
+    if (dailyChartInst) { dailyChartInst.destroy(); dailyChartInst = null; }
+    return;
+  }
+
+  noData.style.display = "none";
+  canvas.style.display = "block";
+
+  // Only days with an actual entry are in `entries` — nothing to fill in for missing days.
+  const sorted  = [...entries].sort((a, b) => a.date.localeCompare(b.date));
+  const fmt     = d => new Date(d + "T12:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  const labels  = sorted.map(e => fmt(e.date));
+  const weights = sorted.map(e => e.weight != null ? e.weight : null);
+  const waists  = sorted.map(e => e.waist != null ? e.waist : null);
+
+  const commonLine = {
+    tension: 0.3,
+    pointRadius: 4,
+    pointHoverRadius: 6,
+    spanGaps: true,
+    borderWidth: 2,
+  };
+
+  const cfg = {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          ...commonLine,
+          label: "Weight (kg)",
+          data: weights,
+          borderColor: "#ff6b35",
+          backgroundColor: "rgba(255,107,53,0.08)",
+          pointBackgroundColor: "#ff6b35",
+          fill: true,
+          yAxisID: "yW",
+        },
+        {
+          ...commonLine,
+          label: "Waist (cm)",
+          data: waists,
+          borderColor: "#47c2ff",
+          backgroundColor: "rgba(71,194,255,0.05)",
+          pointBackgroundColor: "#47c2ff",
+          fill: true,
+          yAxisID: "yC",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#1a1a1a",
+          borderColor: "#333",
+          borderWidth: 1,
+          titleColor: "#666",
+          bodyColor: "#f0f0f0",
+          titleFont: { family: "DM Mono, monospace", size: 10 },
+          bodyFont: { family: "DM Mono, monospace", size: 11 },
+          padding: 10,
+          callbacks: {
+            title: items => items[0].label,
+            label: item => {
+              const unit = item.datasetIndex === 0 ? " kg" : " cm";
+              return " " + item.dataset.label.split(" ")[0] + ": " + (item.raw != null ? item.raw + unit : "—");
+            }
+          }
+        },
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: "#444",
+            font: { family: "DM Mono, monospace", size: 9 },
+            maxRotation: 30,
+          },
+          grid: { color: "#1e1e1e" },
+          border: { color: "#2a2a2a" },
+        },
+        yW: {
+          type: "linear",
+          position: "left",
+          ticks: {
+            color: "#ff6b35",
+            font: { family: "DM Mono, monospace", size: 9 },
+            callback: v => v + " kg",
+          },
+          grid: { color: "#1e1e1e" },
+          border: { color: "#2a2a2a" },
+        },
+        yC: {
+          type: "linear",
+          position: "right",
+          ticks: {
+            color: "#47c2ff",
+            font: { family: "DM Mono, monospace", size: 9 },
+            callback: v => v + " cm",
+          },
+          grid: { display: false },
+          border: { color: "#2a2a2a" },
+        },
+      },
+    },
+  };
+
+  if (dailyChartInst) {
+    dailyChartInst.data = cfg.data;
+    dailyChartInst.update();
+  } else {
+    dailyChartInst = new Chart(canvas.getContext("2d"), cfg);
+  }
+}
+
 
 // ── Weight storage ──
 const STORAGE_KEY = "ppl_weights";
@@ -1064,8 +1233,9 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeLB(); }
 initWeights();
 // Set today as default date
 document.getElementById('jDate').value = todayStr();
+fillDateInputs();
 journeyRender();
-window.addEventListener('resize', () => { const entries = journeyLoad(); const weeks = groupByWeek(entries); if (weeks.length) drawChart(weeks); });
+window.addEventListener('resize', () => { const entries = journeyLoad(); const weeks = groupByWeek(entries); if (weeks.length) drawChart(weeks); if (entries.length) drawDailyChart(entries); });
 </script>
 </body>
 </html>
